@@ -6,7 +6,7 @@
 #subbscribe {
   padding: 0;
   margin: 0;
-  color: #7b8993;
+  color: #7B8993;
   position: fixed;
   right: 15px;
   bottom: 15px;
@@ -30,14 +30,14 @@
   -webkit-transform: translateZ(0);
 }
 #subbscribe a {
-  color: #7b8993;
+  color: #7B8993;
   text-decoration: underline;
 }
 #subbscribe a:hover,
 #subbscribe a:focus,
 #subbscribe a:visited,
 #subbscribe a:active {
-  color: #7b8993;
+  color: #7B8993;
 }
 #subbscribe .subbscribe-alert {
   font-size: 12px;
@@ -45,10 +45,10 @@
   margin-bottom: 10px;
 }
 #subbscribe .subbscribe-error {
-  color: #fd392b;
+  color: #FD392B;
 }
 #subbscribe .subbscribe-success {
-  color: #9fce70;
+  color: #9FCE70;
 }
 #subbscribe .animate {
   -moz-transition: all 0.2s ease-in;
@@ -64,9 +64,10 @@
 }
 #subbscribe .subb-title .close-x {
   float: right;
-  margin-top: 5px;
+  margin-top: -12px;
   color: #dcdcdc;
   cursor: pointer;
+  font-size: 30px;
 }
 #subbscribe .subb-body {
   padding: 15px;
@@ -132,7 +133,7 @@
   font-size: 13px;
   font-weight: 500 !important;
   width: 100%;
-  color: #7b8993;
+  color: #7B8993;
 }
 #subbscribe .subb-body .subb-form input {
   text-indent: 8px;
@@ -153,7 +154,7 @@
   padding: 5px 0;
 }
 #subbscribe .subb-body .subb-form input.error {
-  border-color: #fd392b;
+  border-color: #FD392B;
 }
 #subbscribe .subb-body .subb-form input:focus {
   outline: 0 none;
