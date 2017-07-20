@@ -74,14 +74,16 @@
   position: relative;
 }
 #subbscribe .subb-body .subb-thumbnail {
-  width: 140px;
+  width: 240px;
   height: 140px;
   display: inline-block;
   float: left;
-  margin-bottom: 15px;
+  margin-bottom: 0px;
+  margin-top: -15px;
+  margin-left: -15px;
 }
 #subbscribe .subb-body .subb-button {
-  float: right;
+  width: 100%;
   margin-top: 5px;
   color: #fff;
   border: none;
