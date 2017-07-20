@@ -20,7 +20,7 @@
             name          : 'Subbscribe',
             color         : '#ee6262',
             thumbnail     : 'https://s3-ap-southeast-2.amazonaws.com/subbscribe/img/avatar.png',
-            emailonly	    : false,
+            emailonly	  : false,
             cm_mail_field : '',
             delay         : 0,
 
@@ -84,7 +84,7 @@
 
 
 	// HTML
-        var html = '<div id="subbscribe" style="display: none"><div class="subb-title">' + settings.title + ' <span class="close-x">&times;</span>  </div> <div class="subb-body"> <div class="subb-hidden"> <div class="subb-thumbnail"> <img style="width: 40px; height: 40px;" src="' + settings.thumbnail + '" /> </div> <div class="subb-hidden"> <div class="subb-site"> &nbsp;' + settings.name + ' </div> <button class="subb-button show-form">Subscribe</button> </div> </div> <div class="subb-form" style="display: none"> <p>' + settings.text + '</p> <form id="mc-embedded-subbscribe-form" method="post" action="' + settings.url + '"> <div class="subbscribe-alert subbscribe-error" style="display: none">Oops! Check your details and try again.</div> <div class="subbscribe-alert subbscribe-success" style="display: none">Thanks! Check your email for confirmation.</div> <div class="text-input"> ' + nameInput + ' </div> <div class="text-input"> ' + emailInput + ' </div> <button class="subb-button submit-form" type="submit" style="width: 100%; margin-bottom: 10px;">Subscribe</button></form> <div class="footer"></div> </div> </div> </div>';
+        var html = '<div id="subbscribe" style="display: none"><div class="subb-title">' + settings.title + ' <span class="close-x">&times;</span>  </div> <div class="subb-body"> <div class="subb-hidden"> <div class="subb-thumbnail"> <img style="width: 140px; height: 140px;" src="' + settings.thumbnail + '" /> </div> <div class="subb-hidden"> <div class="subb-site"> &nbsp;' + settings.name + ' </div> <button class="subb-button show-form">Subscribe</button> </div> </div> <div class="subb-form" style="display: none"> <p>' + settings.text + '</p> <form id="mc-embedded-subbscribe-form" method="post" action="' + settings.url + '"> <div class="subbscribe-alert subbscribe-error" style="display: none">Oops! Check your details and try again.</div> <div class="subbscribe-alert subbscribe-success" style="display: none">Thanks! Check your email for confirmation.</div> <div class="text-input"> ' + nameInput + ' </div> <div class="text-input"> ' + emailInput + ' </div> <button class="subb-button submit-form" type="submit" style="width: 100%; margin-bottom: 10px;">Subscribe</button></form> <div class="footer"></div> </div> </div> </div>';
 
         if(getCookie('subbscribe-hidden') != 1) {
 
