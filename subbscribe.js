@@ -92,9 +92,9 @@
 
              setTimeout(function(){
 
+               $('#subbscribe').addClass('animated slideInRight');
                $('#subbscribe').css('display', 'block');
                // $('#subbscribe').css('width', $('.subb-site').width() + 200 );
-               $('#subbscribe').addClass('animated slideInRight');
 
              }, settings.delay * 1000);
 
