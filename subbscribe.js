@@ -23,52 +23,13 @@
             emailonly	  : false,
             cm_mail_field : '',
             delay         : 0,
+            button        : 'Learn More',
 
 	}, options);
-
-        // Make sure a URL has been passed through
-        if ( settings.url == '' ) {
-
-            console.log('Subbscribe Error: You must provide a valid MailChimp form URL.');
-            return;
-
-        };
-
-        //make sure the cm_mail_field is set when using Campaign Monitor
-        if( settings.list === 'CampaignMonitor' && !settings.cm_mail_field.length ){
-
-            console.log('You must provide the mail input name. Found in the form code from Campaign Monitor');
-            return;
-
-        }
 
 	var _name 	= '';
 	var _email 	= '';
 	var _url 	= '';
-
-	// Make sure list is either set to MailChimp or CampaignMonitor
-	// Change field names if yours don’t match
-
-	if( settings.list == 'MailChimp' ) {
-
-		_name 	= 'NAME';
-		_email 	= 'EMAIL';
-		_action	= settings.url.replace('/post?', '/post-json?').concat('&c=?');
-
-	}
-	else if ( settings.list == 'CampaignMonitor' ) {
-
-		_name 	= 'cm-name';
-		_email 	= settings.cm_mail_field;
-		_action	= settings.url  + "?callback=?";
-
-	}
-	else {
-
-		console.log('Subbscribe Error: list value must be set to MailChimp or CampaignMonitor');
-		return;
-
-	}
 
 	// Separate the input fields from the HTML
 	// if emailonly is set, nameInput should be blank
@@ -84,7 +45,7 @@
 
 
 	// HTML
-        var html = '<div id="subbscribe" style="display: none"><div class="subb-title">' + settings.title + ' <span class="close-x">&times;</span>  </div> <div class="subb-body"> <div class="subb-hidden"> <div class="subb-thumbnail"> <img src="' + settings.thumbnail + '" /> </div> <div class="subb-hidden"> <button class="subb-button show-form">Subscribe</button> </div> </div> <div class="subb-form" style="display: none"> <p>' + settings.text + '</p> <form id="mc-embedded-subbscribe-form" method="post" action="' + settings.url + '"> <div class="subbscribe-alert subbscribe-error" style="display: none">Oops! Check your details and try again.</div> <div class="subbscribe-alert subbscribe-success" style="display: none">Thanks! Check your email for confirmation.</div> <div class="text-input"> ' + nameInput + ' </div> <div class="text-input"> ' + emailInput + ' </div> <button class="subb-button submit-form" type="submit" style="width: 100%; margin-bottom: 10px;">Subscribe</button></form> <div class="footer"></div> </div> </div> </div>';
+        var html = '<div id="subbscribe" style="display: none"><div class="subb-title" style="color: ' + settings.title_color + '">' + settings.title + ' <span class="close-x">&times;</span>  </div> <div class="subb-body"> <p>' + settings.text + '</p>  <div class="subb-hidden"><div class="subb-thumbnail"> <img src="' + settings.thumbnail + '" /> </div> <div class="subb-hidden"> <a href="https://shop.zingtrain.com/collections/digital-learning"><button class="subb-button show-form">' + settings.button + '</button></a> </div> </div> </div> </div> ;'
 
         if(getCookie('subbscribe-hidden') != 1) {
 
@@ -191,87 +152,6 @@
         ===============================================================================
         */
 
-	function isError(data) {
-
-		console.log( data );
-
-		if ( settings.list == 'MailChimp' ) {
-
-			if( data['result'] != "success" ) {
-
-				return true;
-
-			}
-
-			return false;
-
-		}
-		else if ( settings.list == 'CampaignMonitor' ) {
-
-			if( data.Status === 400 ) {
-
-				return true;
-
-			}
-
-			return false;
-
-		}
-
-		return true;
-
-	}
-
-        function resetFormFields() {
-
-            $('#subbscribe input').each(function(){
-                $(this).val('');
-            });
-
-        }
-
-        function validateEmail(email) {
-
-            var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-            return re.test(email);
-
-        }
-
-        function formValidation() {
-
-            var valid   = true;
-            var name    = $('#subb-NAME');
-            var email   = $('#subb-EMAIL');
-
-	    if( !settings.emailonly ) {
-
-		if( name.val().length < 2 ) {
-
-                    valid = false;
-    	            name.addClass('error');
-
-                } else {
-
-                    name.removeClass('error');
-
-                }
-
-	    }
-
-            if ( !validateEmail( email.val() ) ) {
-
-                valid = false;
-                email.addClass('error');
-
-            } else {
-
-                email.removeClass('error');
-
-            }
-
-            return valid;
-
-        }
 
         function setCookie(cname, cvalue, exdays) {
 
