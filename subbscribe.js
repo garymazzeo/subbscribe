@@ -84,67 +84,67 @@
 
         });
 
-        $('#subbscribe .show-form').click(function(){
+        // $('#subbscribe .show-form').click(function(){
 
-            $('#subbscribe .subb-hidden').hide();
-            $('#subbscribe .subb-form').show();
+        //     $('#subbscribe .subb-hidden').hide();
+        //     $('#subbscribe .subb-form').show();
 
-        });
+        // });
 
-        $('#mc-embedded-subbscribe-form').submit(function(e){
+        // $('#mc-embedded-subbscribe-form').submit(function(e){
 
-           e.preventDefault();
+        //    e.preventDefault();
 
-           if( formValidation() ) {
+        //    if( formValidation() ) {
 
-                $('#subbscribe .subbscribe-error').slideUp();
-                $('#subbscribe .submit-form').attr('disabled', 'disabled');
+        //         $('#subbscribe .subbscribe-error').slideUp();
+        //         $('#subbscribe .submit-form').attr('disabled', 'disabled');
 
-                $.ajax({
+        //         $.ajax({
 
-                    url: _action,
-                    type: 'post',
-                    data: $(this).serialize(),
-                    dataType: 'json',
-                    contentType: "application/json; charset=utf-8",
+        //             url: _action,
+        //             type: 'post',
+        //             data: $(this).serialize(),
+        //             dataType: 'json',
+        //             contentType: "application/json; charset=utf-8",
 
-                    success: function (data) {
+        //             success: function (data) {
 
-                       if ( isError(data) ) {
+        //                if ( isError(data) ) {
 
-                           	console.log('Subbscribe Error: submission failed.');
+        //                    	console.log('Subbscribe Error: submission failed.');
 
-                       }
-		       else {
+        //                }
+		      //  else {
 
-                            //SUCCESS
-                            resetFormFields()
-                            $('.subbscribe-success').slideDown();
+        //                     //SUCCESS
+        //                     resetFormFields()
+        //                     $('.subbscribe-success').slideDown();
 
-                            setTimeout(function(){ $('#subbscribe').addClass('animated fadeOut'); }, 2000);
-                            $('#subbscribe').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+        //                     setTimeout(function(){ $('#subbscribe').addClass('animated fadeOut'); }, 2000);
+        //                     $('#subbscribe').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
 
-                                $('#subbscribe').remove();
-                                setCookie('subbscribe-hidden', 1, 365); // Hide for a year
+        //                         $('#subbscribe').remove();
+        //                         setCookie('subbscribe-hidden', 1, 365); // Hide for a year
 
-                                if(typeof settings.onSubbscribe === 'function'){
-                                    settings.onSubbscribe.call();
-                                }
+        //                         if(typeof settings.onSubbscribe === 'function'){
+        //                             settings.onSubbscribe.call();
+        //                         }
 
-                            });
+        //                     });
 
-                       }
-                    }
+        //                }
+        //             }
 
-                });
+        //         });
 
-           } else {
+        //    } else {
 
-                $('#subbscribe .subbscribe-error').slideDown();
+        //         $('#subbscribe .subbscribe-error').slideDown();
 
-           }
+        //    }
 
-        });
+        // });
 
         /*
         ===============================================================================
