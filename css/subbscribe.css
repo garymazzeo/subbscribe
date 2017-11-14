@@ -64,7 +64,7 @@
 }
 #subbscribe .subb-title .close-x {
   position: absolute;
-  top: 10px;
+  top: 0;
   right: 10px;
   color: #dcdcdc;
   cursor: pointer;
