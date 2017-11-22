@@ -61,6 +61,7 @@
   font-weight: bold;
   border: 1px solid #e9e9e9;
   border-width: 0 0 1px 0;
+  background-color: #544053;
 }
 #subbscribe .subb-title .close-x {
   position: absolute;
@@ -73,6 +74,9 @@
 #subbscribe .subb-body {
   padding: 15px;
   position: relative;
+}
+#subbscribe .subb-body p {
+  margin-top: 0;
 }
 #subbscribe .subb-body .subb-thumbnail {
   display: inline-block;
@@ -91,18 +95,14 @@
   padding: 9px 10px 9px 10px;
   font-size: 12px;
   cursor: pointer;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-  -moz-background-clip: padding;
-  -webkit-background-clip: padding-box;
-  background-clip: padding-box;
+  background-color: #ddb666;
 }
 #subbscribe .subb-body .subb-button:hover {
   -moz-transition: all 0.2s ease-in;
   -webkit-transition: all 0.2s ease-in;
   -o-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
+  background-color: #ddb666;
 }
 #subbscribe .subb-body .subb-button:disabled {
   opacity: .5;
@@ -154,10 +154,6 @@
   outline: 0 none;
   resize: none !important;
   box-shadow: none !important;
-  -moz-transition: all 0.2s ease-in;
-  -webkit-transition: all 0.2s ease-in;
-  -o-transition: all 0.2s ease-in;
-  transition: all 0.2s ease-in;
 }
 #subbscribe .subb-body .footer {
   font-size: 10px;
