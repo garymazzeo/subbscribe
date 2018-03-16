@@ -45,7 +45,7 @@
 
 
 	// HTML
-        var html = '<div id="subbscribe" style="display: none"><div class="subb-title" style="color: ' + settings.title_color + '">' + settings.title + ' <span class="close-x">&times;</span>  </div> <div class="subb-body"> <p>' + settings.text + '</p>  <div class="subb-hidden"><div class="subb-thumbnail"> <img src="' + settings.thumbnail + '" /> </div> <div class="subb-hidden"> <a href="https://shop.zingtrain.com/collections/digital-learning"><button class="subb-button show-form">' + settings.button + '</button></a> </div> </div> </div> </div> ;'
+        var html = '<div id="subbscribe" style="display: none"><div class="subb-title" style="color: ' + settings.title_color + '">' + settings.title + ' <span class="close-x">&times;</span>  </div> <div class="subb-body"> <p>' + settings.text + '</p>  <div class="subb-hidden"><div class="subb-thumbnail"> <img src="' + settings.thumbnail + '" /> </div> <div class="subb-hidden"> <a href="' + settings.url + '"><button class="subb-button show-form">' + settings.button + '</button></a> </div> </div> </div> </div> ;'
 
         if(getCookie('subbscribe-hidden') != 1) {
 
